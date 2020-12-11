@@ -16,7 +16,32 @@
   "main": "index.js",
   "scripts": {
     "prebuild": "del-cli dist",
-    "build": "bili"
+    "build": "bili",
+    "lint:js": "eslint --ext .js,.vue ."
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.12.1",
+    "@babel/eslint-plugin": "^7.12.1",
+    "@extensionengine/eslint-config": "^2.0.0",
+    "@extensionengine/rollup-plugin-tailor-ce": "^0.4.0",
+    "@rollup/plugin-alias": "^3.1.1",
+    "@vue/compiler-sfc": "^3.0.4",
+    "babel-eslint": "^10.1.0",
+    "bili": "^5.0.5",
+    "del-cli": "^3.0.1",
+    "eslint": "^7.15.0",
+    "eslint-config-semistandard": "^15.0.1",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-require-sort": "^1.2.2",
+    "eslint-plugin-standard": "^5.0.0",
+    "eslint-plugin-vue": "^7.2.0",
+    "rollup-plugin-visualizer": "^4.2.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "vue-runtime-helpers": "^1.1.2",
+    "vue-template-compiler": "^2.6.12"
   },
   "tailor": {
     "label": "Scorm",
@@ -25,16 +50,5 @@
       "icon": "mdi-package-up",
       "forceFullWidth": true
     }
-  },
-  "devDependencies": {
-    "@extensionengine/rollup-plugin-tailor-ce": "^0.4.0",
-    "@rollup/plugin-alias": "^3.1.1",
-    "@vue/compiler-sfc": "^3.0.4",
-    "bili": "^5.0.5",
-    "del-cli": "^3.0.1",
-    "rollup-plugin-visualizer": "^4.2.0",
-    "rollup-plugin-vue": "^6.0.0",
-    "vue-runtime-helpers": "^1.1.2",
-    "vue-template-compiler": "^2.6.12"
   }
 }
