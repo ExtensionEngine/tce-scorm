@@ -15,7 +15,8 @@
   "author": "ExtensionEngine <info@extensionengine.com>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "del-cli dist",
+    "build": "bili"
   },
   "tailor": {
     "label": "Scorm",
@@ -24,5 +25,16 @@
       "icon": "mdi-package-up",
       "forceFullWidth": true
     }
+  },
+  "devDependencies": {
+    "@extensionengine/rollup-plugin-tailor-ce": "^0.4.0",
+    "@rollup/plugin-alias": "^3.1.1",
+    "@vue/compiler-sfc": "^3.0.4",
+    "bili": "^5.0.5",
+    "del-cli": "^3.0.1",
+    "rollup-plugin-visualizer": "^4.2.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "vue-runtime-helpers": "^1.1.2",
+    "vue-template-compiler": "^2.6.12"
   }
 }
