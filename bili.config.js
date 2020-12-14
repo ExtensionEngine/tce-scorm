@@ -16,7 +16,7 @@ module.exports = {
     vue: true,
     'tailor-ce': true,
     postcss: {
-      extract: 'dist/tce-jodit.css'
+      extract: 'tce-jodit.css'
     },
     babel: {
       sourceMap: true,
