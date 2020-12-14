@@ -19,7 +19,7 @@ module.exports = {
       sourceMap: true,
       extensions: ['.js', '.vue']
     },
-    alias: {
+    '@rollup/plugin-alias': {
       resolve: ['.vue', '.js'],
       entries: [
         { find: '@', replacement: path.resolve(__dirname, './src') }
@@ -31,7 +31,6 @@ module.exports = {
     }
   },
   resolvePlugins: {
-    alias: require('@rollup/plugin-alias'),
     'tailor-ce': require('@extensionengine/rollup-plugin-tailor-ce')
   }
 };
