@@ -13,7 +13,8 @@
   },
   "license": "MIT",
   "author": "ExtensionEngine <info@extensionengine.com>",
-  "main": "index.js",
+  "main": "dist/tce-scorm.js",
+  "module": "dist/tce-scorm.esm.js",
   "scripts": {
     "prebuild": "del-cli dist",
     "build": "bili",
