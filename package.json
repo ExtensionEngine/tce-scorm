@@ -23,7 +23,8 @@
     "lint:scss": "stylelint \"**/*.vue\" \"**/*.scss\""
   },
   "dependencies": {
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "p-min-delay": "^3.1.0"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.12.1",
