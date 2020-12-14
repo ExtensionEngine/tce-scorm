@@ -47,6 +47,10 @@
     "vue-runtime-helpers": "^1.1.2",
     "vue-template-compiler": "^2.6.12"
   },
+  "peerDependencies": {
+    "vee-validate": "^3.4.5",
+    "vuetify": "^2.3.21"
+  },
   "tailor": {
     "label": "Scorm",
     "type": "SCORM",
