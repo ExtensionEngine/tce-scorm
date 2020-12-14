@@ -21,6 +21,9 @@
     "lint:js": "eslint --ext .js,.vue .",
     "lint:scss": "stylelint \"**/*.vue\" \"**/*.scss\""
   },
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
   "devDependencies": {
     "@babel/eslint-parser": "^7.12.1",
     "@babel/eslint-plugin": "^7.12.1",
@@ -41,6 +44,7 @@
     "eslint-plugin-require-sort": "^1.2.2",
     "eslint-plugin-standard": "^5.0.0",
     "eslint-plugin-vue": "^7.2.0",
+    "node-sass": "^5.0.0",
     "rollup-plugin-visualizer": "^4.2.0",
     "rollup-plugin-vue": "4.3.2",
     "stylelint": "^13.8.0",
