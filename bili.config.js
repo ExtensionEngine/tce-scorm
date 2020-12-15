@@ -28,6 +28,9 @@ module.exports = {
         { find: '@', replacement: path.resolve(__dirname, './src') }
       ]
     },
+    copy: {
+      targets: [{ src: 'src/util.js', dest: 'dist' }]
+    },
     visualizer: {
       sourceMap: true,
       open: false
