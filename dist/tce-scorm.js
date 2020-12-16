@@ -435,11 +435,7 @@ var uploadMixin = {
 
       if (!file) return;
       this.form.append('file', file, file.name);
-
-      var _ref = this.uploadOptions || {},
-          unpack = _ref.unpack;
-
-      if (unpack) this.form.append('unpack', true);
+      this.form.append('unpack', true);
     },
     upload: loader(function (e) {
       var _this = this;
@@ -503,20 +499,9 @@ var script$3 = {
       type: String,
       "default": 'Choose a file'
     },
-    unpack: {
-      type: Boolean,
-      "default": false
-    },
     sm: {
       type: Boolean,
       "default": false
-    }
-  },
-  computed: {
-    uploadOptions: function uploadOptions() {
-      return {
-        unpack: this.unpack
-      };
     }
   },
   methods: {
@@ -609,7 +594,7 @@ var __vue_staticRenderFns__$3 = [];
 var __vue_inject_styles__$3 = undefined;
 /* scoped */
 
-var __vue_scope_id__$3 = "data-v-e6e3a770";
+var __vue_scope_id__$3 = "data-v-4bb7424c";
 /* functional template */
 
 var __vue_is_functional_template__$3 = false;
