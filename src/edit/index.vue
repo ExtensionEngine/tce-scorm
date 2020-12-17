@@ -16,7 +16,8 @@
           :src="launchUrl"
           :tabindex="isDisabled || isFocused ? 0 : -1"
           frameborder="0"
-          class="element"></iframe>
+          class="element">
+        </iframe>
       </div>
     </div>
   </div>
