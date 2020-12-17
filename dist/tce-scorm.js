@@ -679,8 +679,7 @@ var __vue_render__$4 = function __vue_render__() {
     staticClass: "mx-auto"
   }, [_c('upload-btn', {
     attrs: {
-      "label": "Upload SCORM package",
-      "unpack": ""
+      "label": "Upload SCORM package"
     },
     on: {
       "upload": _vm.saveElement
@@ -694,7 +693,7 @@ var __vue_staticRenderFns__$4 = [];
 var __vue_inject_styles__$4 = undefined;
 /* scoped */
 
-var __vue_scope_id__$4 = "data-v-530bbe8c";
+var __vue_scope_id__$4 = "data-v-4ab332f8";
 /* functional template */
 
 var __vue_is_functional_template__$4 = false;
