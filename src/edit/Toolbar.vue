@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import cloneDeep from 'lodash/cloneDeep';
 import UploadBtn from '@/tce-core/UploadBtn.vue';
 
 export default {
+  inject: ['$elementBus'],
   props: {
     element: { type: Object, required: true }
   },
@@ -23,9 +23,7 @@ export default {
   },
   methods: {
     saveElement(data) {
-      const element = cloneDeep(this.element);
-      Object.assign(element.data, data);
-      this.$emit('save', element);
+      this.$elementBus.emit('save', { ...this.element.data, ...data });
     }
   },
   components: { UploadBtn }

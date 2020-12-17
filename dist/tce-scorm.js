@@ -2,13 +2,11 @@
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
-var cloneDeep = require('lodash/cloneDeep');
 var uniqueId = require('lodash/uniqueId');
 var pMinDelay = require('p-min-delay');
 
 function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var cloneDeep__default = /*#__PURE__*/_interopDefaultLegacy(cloneDeep);
 var uniqueId__default = /*#__PURE__*/_interopDefaultLegacy(uniqueId);
 var pMinDelay__default = /*#__PURE__*/_interopDefaultLegacy(pMinDelay);
 
@@ -249,6 +247,7 @@ var PreviewOverlay = __vue_normalize__$1({
 //
 var script$2 = {
   name: 'tce-scorm',
+  inject: ['$elementBus'],
   props: {
     element: {
       type: Object,
@@ -271,6 +270,13 @@ var script$2 = {
     launchUrl: function launchUrl(vm) {
       return vm.element.data.launchUrl;
     }
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$elementBus.on('save', function (data) {
+      return _this.$emit('save', data);
+    });
   },
   components: {
     ElementPlaceholder: ElementPlaceholder,
@@ -319,7 +325,7 @@ var __vue_staticRenderFns__$2 = [];
 var __vue_inject_styles__$2 = undefined;
 /* scoped */
 
-var __vue_scope_id__$2 = "data-v-3ce38c14";
+var __vue_scope_id__$2 = "data-v-4b0525d0";
 /* functional template */
 
 var __vue_is_functional_template__$2 = false;
@@ -628,6 +634,7 @@ var UploadBtn = __vue_normalize__$3({
 
 //
 var script$4 = {
+  inject: ['$elementBus'],
   props: {
     element: {
       type: Object,
@@ -641,9 +648,7 @@ var script$4 = {
   },
   methods: {
     saveElement: function saveElement(data) {
-      var element = cloneDeep__default['default'](this.element);
-      Object.assign(element.data, data);
-      this.$emit('save', element);
+      this.$elementBus.emit('save', Object.assign({}, this.element.data, data));
     }
   },
   components: {
@@ -689,7 +694,7 @@ var __vue_staticRenderFns__$4 = [];
 var __vue_inject_styles__$4 = undefined;
 /* scoped */
 
-var __vue_scope_id__$4 = "data-v-e3d3a370";
+var __vue_scope_id__$4 = "data-v-530bbe8c";
 /* functional template */
 
 var __vue_is_functional_template__$4 = false;

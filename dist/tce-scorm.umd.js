@@ -1,12 +1,11 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('lodash/cloneDeep'), require('lodash/uniqueId'), require('p-min-delay')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'lodash/cloneDeep', 'lodash/uniqueId', 'p-min-delay'], factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.__TAILOR_CONTENT_ELEMENTS__ = global.__TAILOR_CONTENT_ELEMENTS__ || {}, global.__TAILOR_CONTENT_ELEMENTS__['@extensionengine/tce-scorm'] = {}), global.cloneDeep, global.uniqueId, global.pMinDelay));
-}(this, (function (exports, cloneDeep, uniqueId, pMinDelay) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('lodash/uniqueId'), require('p-min-delay')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'lodash/uniqueId', 'p-min-delay'], factory) :
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, factory((global.__TAILOR_CONTENT_ELEMENTS__ = global.__TAILOR_CONTENT_ELEMENTS__ || {}, global.__TAILOR_CONTENT_ELEMENTS__['@extensionengine/tce-scorm'] = {}), global.uniqueId, global.pMinDelay));
+}(this, (function (exports, uniqueId, pMinDelay) { 'use strict';
 
   function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-  var cloneDeep__default = /*#__PURE__*/_interopDefaultLegacy(cloneDeep);
   var uniqueId__default = /*#__PURE__*/_interopDefaultLegacy(uniqueId);
   var pMinDelay__default = /*#__PURE__*/_interopDefaultLegacy(pMinDelay);
 
@@ -247,6 +246,7 @@
   //
   var script$2 = {
     name: 'tce-scorm',
+    inject: ['$elementBus'],
     props: {
       element: {
         type: Object,
@@ -269,6 +269,13 @@
       launchUrl: function launchUrl(vm) {
         return vm.element.data.launchUrl;
       }
+    },
+    mounted: function mounted() {
+      var _this = this;
+
+      this.$elementBus.on('save', function (data) {
+        return _this.$emit('save', data);
+      });
     },
     components: {
       ElementPlaceholder: ElementPlaceholder,
@@ -317,7 +324,7 @@
   var __vue_inject_styles__$2 = undefined;
   /* scoped */
 
-  var __vue_scope_id__$2 = "data-v-3ce38c14";
+  var __vue_scope_id__$2 = "data-v-4b0525d0";
   /* functional template */
 
   var __vue_is_functional_template__$2 = false;
@@ -626,6 +633,7 @@
 
   //
   var script$4 = {
+    inject: ['$elementBus'],
     props: {
       element: {
         type: Object,
@@ -639,9 +647,7 @@
     },
     methods: {
       saveElement: function saveElement(data) {
-        var element = cloneDeep__default['default'](this.element);
-        Object.assign(element.data, data);
-        this.$emit('save', element);
+        this.$elementBus.emit('save', Object.assign({}, this.element.data, data));
       }
     },
     components: {
@@ -687,7 +693,7 @@
   var __vue_inject_styles__$4 = undefined;
   /* scoped */
 
-  var __vue_scope_id__$4 = "data-v-e3d3a370";
+  var __vue_scope_id__$4 = "data-v-530bbe8c";
   /* functional template */
 
   var __vue_is_functional_template__$4 = false;

@@ -28,6 +28,7 @@ import PreviewOverlay from '@/tce-core/PreviewOverlay.vue';
 
 export default {
   name: 'tce-scorm',
+  inject: ['$elementBus'],
   props: {
     element: { type: Object, required: true },
     isFocused: { type: Boolean, default: false },
@@ -36,6 +37,9 @@ export default {
   },
   computed: {
     launchUrl: vm => vm.element.data.launchUrl
+  },
+  mounted() {
+    this.$elementBus.on('save', data => this.$emit('save', data));
   },
   components: { ElementPlaceholder, PreviewOverlay }
 };
