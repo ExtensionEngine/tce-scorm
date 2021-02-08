@@ -29,7 +29,7 @@ module.exports = {
       ]
     },
     copy: {
-      targets: [{ src: 'src/util.js', dest: 'dist' }]
+      targets: [{ src: 'src/server', dest: 'dist' }]
     },
     visualizer: {
       sourceMap: true,
