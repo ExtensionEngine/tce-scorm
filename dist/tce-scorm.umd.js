@@ -442,11 +442,11 @@
         this.form.append('file', file, file.name);
         this.form.append('unpack', true);
       },
-      upload: loader(function (e) {
+      upload: loader(function (repositoryId, e) {
         var _this = this;
 
         this.createFileForm(e);
-        return this.$storageService.upload(this.form).then(function (data) {
+        return this.$storageService.upload(repositoryId, this.form).then(function (data) {
           var _this$form$get = _this.form.get('file'),
               name = _this$form$get.name;
 
@@ -507,6 +507,10 @@
       sm: {
         type: Boolean,
         "default": false
+      },
+      repositoryId: {
+        type: Number,
+        required: true
       }
     },
     methods: {
@@ -516,7 +520,7 @@
 
           return _await(_this2.$refs.validator.validate(e), function (_ref) {
             var valid = _ref.valid;
-            if (valid) _this2.upload(e);
+            if (valid) _this2.upload(_this2.repositoryId, e);
           });
         } catch (e) {
           return Promise.reject(e);
@@ -599,7 +603,7 @@
   var __vue_inject_styles__$3 = undefined;
   /* scoped */
 
-  var __vue_scope_id__$3 = "data-v-4bb7424c";
+  var __vue_scope_id__$3 = "data-v-8defaee8";
   /* functional template */
 
   var __vue_is_functional_template__$3 = false;
@@ -678,6 +682,7 @@
       staticClass: "mx-auto"
     }, [_c('upload-btn', {
       attrs: {
+        "repository-id": _vm.element.repositoryId,
         "label": "Upload SCORM package"
       },
       on: {
@@ -692,7 +697,7 @@
   var __vue_inject_styles__$4 = undefined;
   /* scoped */
 
-  var __vue_scope_id__$4 = "data-v-4ab332f8";
+  var __vue_scope_id__$4 = "data-v-dd00fc08";
   /* functional template */
 
   var __vue_is_functional_template__$4 = false;

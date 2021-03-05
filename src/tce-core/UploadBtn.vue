@@ -42,12 +42,13 @@ export default {
     fileKey: { type: String, default: '' },
     validate: { type: Object, default: () => ({ ext: [] }) },
     label: { type: String, default: 'Choose a file' },
-    sm: { type: Boolean, default: false }
+    sm: { type: Boolean, default: false },
+    repositoryId: { type: Number, required: true }
   },
   methods: {
     async validateAndUpload(e) {
       const { valid } = await this.$refs.validator.validate(e);
-      if (valid) this.upload(e);
+      if (valid) this.upload(this.repositoryId, e);
     }
   },
   watch: {
