@@ -1,8 +1,12 @@
 import loader from './loader';
+import { mapGetters } from 'vuex';
 
 export default {
   inject: ['$storageService'],
   data: () => ({ uploading: false }),
+  computed: {
+    ...mapGetters('repository', { repositoryId: 'id' })
+  },
   methods: {
     createFileForm(e) {
       this.form = new FormData();
@@ -13,7 +17,7 @@ export default {
     },
     upload: loader(function (e) {
       this.createFileForm(e);
-      return this.$storageService.upload(this.form)
+      return this.$storageService.upload(this.repositoryId, this.form)
         .then(data => {
           const { name } = this.form.get('file');
           this.$emit('upload', { ...data, name });
