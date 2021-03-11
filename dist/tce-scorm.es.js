@@ -470,6 +470,10 @@ var script$3 = {
   name: 'upload-btn',
   mixins: [uploadMixin],
   props: {
+    repositoryId: {
+      type: Number,
+      required: true
+    },
     id: {
       type: String,
       "default": function _default() {
@@ -499,10 +503,6 @@ var script$3 = {
     sm: {
       type: Boolean,
       "default": false
-    },
-    repositoryId: {
-      type: Number,
-      required: true
     }
   },
   methods: {
@@ -595,7 +595,7 @@ var __vue_staticRenderFns__$3 = [];
 var __vue_inject_styles__$3 = undefined;
 /* scoped */
 
-var __vue_scope_id__$3 = "data-v-8defaee8";
+var __vue_scope_id__$3 = "data-v-5db5433c";
 /* functional template */
 
 var __vue_is_functional_template__$3 = false;

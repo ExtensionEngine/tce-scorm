@@ -37,13 +37,13 @@ export default {
   name: 'upload-btn',
   mixins: [uploadMixin],
   props: {
+    repositoryId: { type: Number, required: true },
     id: { type: String, default: () => uniqueId('file_') },
     fileName: { type: String, default: '' },
     fileKey: { type: String, default: '' },
     validate: { type: Object, default: () => ({ ext: [] }) },
     label: { type: String, default: 'Choose a file' },
-    sm: { type: Boolean, default: false },
-    repositoryId: { type: Number, required: true }
+    sm: { type: Boolean, default: false }
   },
   methods: {
     async validateAndUpload(e) {
