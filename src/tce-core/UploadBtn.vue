@@ -37,6 +37,7 @@ export default {
   name: 'upload-btn',
   mixins: [uploadMixin],
   props: {
+    repositoryId: { type: Number, required: true },
     id: { type: String, default: () => uniqueId('file_') },
     fileName: { type: String, default: '' },
     fileKey: { type: String, default: '' },
@@ -47,7 +48,7 @@ export default {
   methods: {
     async validateAndUpload(e) {
       const { valid } = await this.$refs.validator.validate(e);
-      if (valid) this.upload(e);
+      if (valid) this.upload(this.repositoryId, e);
     }
   },
   watch: {
