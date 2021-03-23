@@ -10,7 +10,7 @@ async function setLaunchUrl(element, { config, storage, storageProxy }) {
   const options = { ignoreAttributes: false, attributeNamePrefix: '$_' };
   const { manifest: parsedManifest } = xmlParser.parse(manifest.toString(), options);
   const { $_href: resourcePath } = parsedManifest.resources.resource;
-  const storagePath = storage.getStoragePath(element.repositoryId);
+  const storagePath = storage.getPath(element.repositoryId);
   const launchKey = `${storagePath}/${root}/${resourcePath}`;
   element.data.launchUrl = storageProxy.getFileUrl(launchKey);
   return element;
