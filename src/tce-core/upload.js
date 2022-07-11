@@ -11,9 +11,9 @@ export default {
       this.form.append('file', file, file.name);
       this.form.append('unpack', true);
     },
-    upload: loader(function (e) {
+    upload: loader(function (repositoryId, e) {
       this.createFileForm(e);
-      return this.$storageService.upload(this.form)
+      return this.$storageService.upload(repositoryId, this.form)
         .then(data => {
           const { name } = this.form.get('file');
           this.$emit('upload', { ...data, name });

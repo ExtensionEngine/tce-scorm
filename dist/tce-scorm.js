@@ -476,11 +476,11 @@ var uploadMixin = {
       this.form.append('file', file, file.name);
       this.form.append('unpack', true);
     },
-    upload: loader(function (e) {
+    upload: loader(function (repositoryId, e) {
       var _this = this;
 
       this.createFileForm(e);
-      return this.$storageService.upload(this.form).then(function (data) {
+      return this.$storageService.upload(repositoryId, this.form).then(function (data) {
         var _this$form$get = _this.form.get('file'),
             name = _this$form$get.name;
 
@@ -512,6 +512,10 @@ var script$3 = {
   name: 'upload-btn',
   mixins: [uploadMixin],
   props: {
+    repositoryId: {
+      type: Number,
+      required: true
+    },
     id: {
       type: String,
       "default": function _default() {
@@ -550,7 +554,7 @@ var script$3 = {
 
         return _await(_this2.$refs.validator.validate(e), function (_ref) {
           var valid = _ref.valid;
-          if (valid) _this2.upload(e);
+          if (valid) _this2.upload(_this2.repositoryId, e);
         });
       } catch (e) {
         return Promise.reject(e);
@@ -633,7 +637,7 @@ var __vue_staticRenderFns__$3 = [];
 var __vue_inject_styles__$3 = undefined;
 /* scoped */
 
-var __vue_scope_id__$3 = "data-v-4bb7424c";
+var __vue_scope_id__$3 = "data-v-5db5433c";
 /* module identifier */
 
 var __vue_module_identifier__$3 = undefined;
@@ -698,6 +702,7 @@ var __vue_render__$4 = function __vue_render__() {
     staticClass: "mx-auto"
   }, [_c('upload-btn', {
     attrs: {
+      "repository-id": _vm.element.repositoryId,
       "label": "Upload SCORM package"
     },
     on: {
@@ -712,7 +717,7 @@ var __vue_staticRenderFns__$4 = [];
 var __vue_inject_styles__$4 = undefined;
 /* scoped */
 
-var __vue_scope_id__$4 = "data-v-4ab332f8";
+var __vue_scope_id__$4 = "data-v-dd00fc08";
 /* module identifier */
 
 var __vue_module_identifier__$4 = undefined;
