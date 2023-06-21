@@ -1,16 +1,28 @@
-'use strict';
-
 module.exports = {
   root: true,
-  extends: '@extensionengine',
-  overrides: [{
-    files: ['src/**'],
-    parserOptions: {
-      parser: 'babel-eslint',
-      sourceType: 'module'
-    },
-    rules: {
-      'vue/component-definition-name-casing': ['error', 'kebab-case']
+  extends: ['@extensionengine', 'plugin:vue/recommended', 'prettier'],
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    ecmaVersion: 2020,
+    requireConfigFile: false,
+    sourceType: 'module'
+  },
+  overrides: [
+    {
+      files: ['src/**'],
+      rules: {
+        'vue/component-definition-name-casing': ['error', 'kebab-case'],
+        'vue/multi-word-component-names': 'off'
+      }
     }
-  }]
+  ],
+  plugins: ['vue'],
+  settings: {
+    'import/resolver': {
+      alias: {
+        map: [['@', './src']],
+        extensions: ['.js', '.vue']
+      }
+    }
+  }
 };

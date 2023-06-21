@@ -1,9 +1,12 @@
 import pMinDelay from 'p-min-delay';
 
-export default function loader(action, name, minDuration = 0) {
-  return function () {
-    this[name] = true;
-    return pMinDelay(Promise.resolve(action.call(this, ...arguments)), minDuration)
-      .finally(() => (this[name] = false));
+export default function loader(action, flag, minDuration = 0) {
+  return async function (...args) {
+    flag.value = true;
+    try {
+      return await pMinDelay(Promise.resolve(action.call(this, ...args)), minDuration);
+    } finally {
+      flag.value = false;
+    }
   };
 }

@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <button class="overlay d-flex justify-center align-center">
     <div class="message grey--text text--lighten-2">Click to preview</div>
   </button>
@@ -12,10 +12,10 @@ export default { name: 'tce-preview-overlay' };
 .overlay {
   position: absolute;
   z-index: 3;
+  opacity: 0.9;
   width: 100%;
   height: 100%;
   background-color: #111;
-  opacity: 0.9;
 
   &:hover {
     cursor: pointer;
