@@ -8,7 +8,6 @@ import vue from '@vitejs/plugin-vue2';
  */
 export default {
   build: {
-    cssMinify: false,
     sourcemap: true,
     lib: {
       entry: resolve(__dirname, 'src/index.js'),
@@ -17,7 +16,8 @@ export default {
     },
     rollupOptions: {
       output: {
-        assetFileNames: 'tce-scorm.[ext]'
+        assetFileNames: 'tce-scorm.[ext]',
+        exports: 'named'
       }
     }
   },
@@ -30,6 +30,11 @@ export default {
       targets: [{ src: 'src/server', dest: 'dist' }],
       hook: 'writeBundle'
     }),
+    /*
+      Build warning - "install" is not exported by "src/index.js",
+      imported by "virtual:/.../tce-scorm/src/index.js"; is caused by
+      `@extensionengine/rollup-plugin-tailor-ce` plugin.
+     */
     tailorCe()
   ]
 };

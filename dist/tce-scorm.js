@@ -1,4 +1,4 @@
-const S = "@extensionengine/tce-scorm", D = "0.0.3", M = {
+const S = "@extensionengine/tce-scorm", D = "0.0.4", M = {
   label: "Scorm",
   type: "SCORM",
   ui: {
