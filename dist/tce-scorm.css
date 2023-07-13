@@ -6,52 +6,42 @@
   height: 100%;
   background-color: #111;
 }
-
 .overlay[data-v-df311f4a]:hover {
   cursor: pointer;
 }
-
 .overlay .message[data-v-df311f4a] {
   font-size: 1.125rem;
-}
-.tce-scorm[data-v-c5f02ba5] {
+}.tce-scorm[data-v-c5f02ba5] {
   position: relative;
 }
-
 .container[data-v-c5f02ba5] {
   position: relative;
   width: 100%;
   height: 70vh;
 }
-
 .element[data-v-c5f02ba5] {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-}
-.file-upload[data-v-2dd8f1ab], .upload-form[data-v-2dd8f1ab] {
+}.file-upload[data-v-2dd8f1ab], .upload-form[data-v-2dd8f1ab] {
   display: inline-block;
 }
-
 .upload-input[data-v-2dd8f1ab] {
   visibility: hidden;
   max-width: 0;
   max-height: 0;
 }
-
 .file-name[data-v-2dd8f1ab] {
   cursor: pointer;
   font-size: 1rem;
   color: #00f;
   text-decoration: underline;
-}
-.tce-scorm-toolbar[data-v-68e0ba8d] .v-toolbar__title {
+}.tce-scorm-toolbar[data-v-68e0ba8d] .v-toolbar__title {
   min-width: 23.875rem;
   text-align: left;
 }
-
 .tce-scorm-toolbar[data-v-68e0ba8d] .file-upload {
   display: flex;
   align-items: center;
