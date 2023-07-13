@@ -25,6 +25,7 @@
       "import": "./dist/tce-scorm.js",
       "require": "./dist/tce-scorm.cjs"
     },
+    "./server": "./dist/server/index.js",
     "./tce-scorm.css": "./dist/tce-scorm.css"
   },
   "scripts": {
