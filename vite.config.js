@@ -1,5 +1,4 @@
 import copy from 'rollup-plugin-copy';
-import postcss from 'rollup-plugin-postcss';
 import { resolve } from 'node:path';
 import tailorCe from '@extensionengine/rollup-plugin-tailor-ce';
 import vue from '@vitejs/plugin-vue2';
@@ -15,6 +14,11 @@ export default {
       entry: resolve(__dirname, 'src/index.js'),
       name: 'TceScorm',
       formats: ['es', 'umd', 'cjs']
+    },
+    rollupOptions: {
+      output: {
+        assetFileNames: 'tce-scorm.[ext]'
+      }
     }
   },
   resolve: {
@@ -25,9 +29,6 @@ export default {
     copy({
       targets: [{ src: 'src/server', dest: 'dist' }],
       hook: 'writeBundle'
-    }),
-    postcss({
-      extract: 'tce-scorm.css'
     }),
     tailorCe()
   ]
