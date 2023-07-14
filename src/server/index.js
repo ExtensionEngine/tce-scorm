@@ -1,4 +1,4 @@
-import find from 'lodash/find';
+import find from 'lodash/find.js';
 import xmlParser from 'fast-xml-parser';
 
 async function setLaunchUrl(element, { config, storage, storageProxy }) {
