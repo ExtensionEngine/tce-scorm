@@ -3,7 +3,7 @@
   "description": "Use SCORM standard package with Tailor",
   "author": "ExtensionEngine <info@extensionengine.com>",
   "license": "MIT",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "keywords": [],
   "homepage": "https://github.com/ExtensionEngine/tce-scorm#readme",
   "bugs": {
